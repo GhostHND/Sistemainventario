@@ -44,7 +44,7 @@ if ($result_data > 0) {
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Punto de Venta</title>
+	<title>Inventario - Grupo Astro</title>
 
 	<!-- Custom styles for this template-->
 	<link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -79,8 +79,8 @@ if ($result_data > 0) {
 						<i class="fa fa-bars"></i>
 					</button>
 					<div class="input-group">
-						<h6>Sistema de Venta</h6>
-						<p class="ml-auto"><strong>Peru, </strong><?php echo fechaPeru(); ?></p>
+						<h6>Sistema de Inventario - Grupo Astro</h6>
+						<p class="ml-auto"><strong>Danli, El Paraiso, Honduras, </strong><?php echo fechaHonduras(); ?></p>
 					</div>
 
 					<!-- Topbar Navbar -->

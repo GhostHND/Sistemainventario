@@ -3,10 +3,10 @@
 
 	<!-- Sidebar - Brand -->
 	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-		<div class="sidebar-brand-icon rotate-n-15">
-			<img src="img/logo.jpg" class="img-thumbnail">
+		<div class="sidebar-brand-icon ">
+			<img src="img/logo.webp" class="img-thumbnail">
 		</div>
-		<div class="sidebar-brand-text mx-3">Vida Informático</div>
+		<div class="sidebar-brand-text mx-4">Grupo Astro</div>
 	</a>
 
 	<!-- Divider -->
@@ -17,7 +17,7 @@
 
 	<!-- Heading -->
 	<div class="sidebar-heading">
-		Interface
+		DASHBOARD
 	</div>
 
 	<!-- Nav Item - Pages Collapse Menu -->
