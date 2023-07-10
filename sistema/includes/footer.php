@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
   <div class="container my-auto">
     <div class="copyright text-center my-auto">
-      <span>Copyright &copy; Vida Informatico <?php echo date("Y"); ?></span>
+      <span>Copyright &copy; Grupo Astro <?php echo date("Y"); ?></span>
     </div>
   </div>
 </footer>

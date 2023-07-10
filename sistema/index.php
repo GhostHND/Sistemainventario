@@ -34,11 +34,11 @@
 				<div class="card-body">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
-							<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Empleados</div>
+							<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Inventario</div>
 							<div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data['clientes']; ?></div>
 						</div>
 						<div class="col-auto">
-							<i class="fas fa-users fa-2x text-gray-300"></i>
+							<i class="fa fa-archive fa-2x text-gray-300"></i>
 						</div>
 					</div>
 				</div>
@@ -144,10 +144,7 @@
 					</div>
 					<div class="card-body">
 						<form action="empresa.php" method="post" id="frmEmpresa" class="p-3">
-							<div class="form-group">
-								<label>Ruc:</label>
-								<input type="number" name="txtDni" value="<?php echo $dni; ?>" id="txtDni" placeholder="Dni de la Empresa" required class="form-control">
-							</div>
+							
 							<div class="form-group">
 								<label>Nombre:</label>
 								<input type="text" name="txtNombre" class="form-control" value="<?php echo $nombre_empresa; ?>" id="txtNombre" placeholder="Nombre de la Empresa" required class="form-control">
@@ -168,10 +165,7 @@
 								<label>Dirección:</label>
 								<input type="text" name="txtDirEmpresa" class="form-control" value="<?php echo $dirEmpresa; ?>" id="txtDirEmpresa" placeholder="Dirreción de la Empresa" required>
 							</div>
-							<div class="form-group">
-								<label>IGV (%):</label>
-								<input type="text" name="txtIgv" class="form-control" value="<?php echo $igv; ?>" id="txtIgv" placeholder="IGV de la Empresa" required>
-							</div>
+							
 							<?php echo isset($alert) ? $alert : ''; ?>
 							<div>
 								<button type="submit" class="btn btn-primary btnChangePass"><i class="fas fa-save"></i> Guardar Datos</button>
@@ -189,10 +183,7 @@
 					</div>
 					<div class="card-body">
 						<div class="p-3">
-							<div class="form-group">
-								<strong>Ruc:</strong>
-								<h6><?php echo $dni; ?></h6>
-							</div>
+							
 							<div class="form-group">
 								<strong>Nombre:</strong>
 								<h6><?php echo $nombre_empresa; ?></h6>
@@ -213,10 +204,7 @@
 								<strong>Dirección:</strong>
 								<h6><?php echo $dirEmpresa; ?></h6>
 							</div>
-							<div class="form-group">
-								<strong>IGV (%):</strong>
-								<h6><?php echo $igv; ?></h6>
-							</div>
+							
 
 						</div>
 					</div>
