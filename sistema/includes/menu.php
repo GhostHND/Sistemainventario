@@ -23,13 +23,13 @@
 	<!-- Nav Item - Pages Collapse Menu -->
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-			<i class="fas fa-fw fa-cog"></i>
-			<span>Inventario</span>
+			<i class="fas fa-audio-description "></i>
+			<span>Publicidad Nacional</span>
 		</a>
 		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<a class="collapse-item" href="nueva_venta.php">Nuevo Registro</a>
-				<a class="collapse-item" href="ventas.php">Inventario</a>
+				<a class="collapse-item" href="ventas.php">Facturas</a>
 			</div>
 		</div>
 	</li>
@@ -37,13 +37,13 @@
 	<!-- Nav Item - Productos Collapse Menu -->
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-			<i class="fas fa-fw fa-wrench"></i>
-			<span>Productos</span>
+			<i class="fas fa-users"></i>
+			<span>Clientes</span>
 		</a>
 		<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-				<a class="collapse-item" href="registro_producto.php">Nuevo Producto</a>
-				<a class="collapse-item" href="lista_productos.php">Productos</a>
+				<a class="collapse-item" href="registro_producto.php">Nuevo Cliente</a>
+				<a class="collapse-item" href="lista_cliente.php">Clientes</a>
 			</div>
 		</div>
 	</li>
@@ -56,21 +56,21 @@
 		</a>
 		<div id="collapseInventario" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-				<a class="collapse-item" href="registro_cliente.php">Nuevo Registro</a>
-				<a class="collapse-item" href="lista_cliente.php">Inventario</a>
+				<a class="collapse-item" href="registro_inv.php">Nuevo Registro</a>
+				<a class="collapse-item" href="lista_inv.php">Inventario</a>
 			</div>
 		</div>
 	</li>
 	<!-- Nav Item - Utilities Collapse Menu -->
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProveedor" aria-expanded="true" aria-controls="collapseUtilities">
-			<i class="fas fa-hospital"></i>
-			<span>Proveedor</span>
+			<i class="fa fa-id-card"></i>
+			<span>Empleados</span>
 		</a>
 		<div id="collapseProveedor" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-				<a class="collapse-item" href="registro_proveedor.php">Nuevo Proveedor</a>
-				<a class="collapse-item" href="lista_proveedor.php">Proveedores</a>
+				<a class="collapse-item" href="registro_proveedor.php">Nuevo Empleado</a>
+				<a class="collapse-item" href="lista_proveedor.php">Empleados</a>
 			</div>
 		</div>
 	</li>

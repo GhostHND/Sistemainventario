@@ -35,7 +35,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
 							<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Inventario</div>
-							<div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data['clientes']; ?></div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data['inven']; ?></div>
 						</div>
 						<div class="col-auto">
 							<i class="fa fa-archive fa-2x text-gray-300"></i>
@@ -46,25 +46,20 @@
 		</a>
 
 		<!-- Earnings (Monthly) Card Example -->
-		<a class="col-xl-3 col-md-6 mb-4" href="lista_productos.php">
+		<a class="col-xl-3 col-md-6 mb-4" href="lista_cliente.php">
 			<div class="card border-left-info shadow h-100 py-2">
 				<div class="card-body">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
-							<div class="text-xs font-weight-bold text-info text-uppercase mb-1">Productos</div>
+							<div class="text-xs font-weight-bold text-info text-uppercase mb-1">Clientes</div>
 							<div class="row no-gutters align-items-center">
 								<div class="col-auto">
-									<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $data['productos']; ?></div>
-								</div>
-								<div class="col">
-									<div class="progress progress-sm mr-2">
-										<div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
+									<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $data['clientes']; ?></div>
 								</div>
 							</div>
 						</div>
 						<div class="col-auto">
-							<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+							<i class="fas fa-users fa-2x text-gray-300"></i>
 						</div>
 					</div>
 				</div>
@@ -144,7 +139,10 @@
 					</div>
 					<div class="card-body">
 						<form action="empresa.php" method="post" id="frmEmpresa" class="p-3">
-							
+							<div class="form-group">
+								<label>CAI:</label>
+								<input type="number" name="txtDni" value="<?php echo $dni; ?>" id="txtDni" placeholder="Dni de la Empresa" required class="form-control">
+							</div>
 							<div class="form-group">
 								<label>Nombre:</label>
 								<input type="text" name="txtNombre" class="form-control" value="<?php echo $nombre_empresa; ?>" id="txtNombre" placeholder="Nombre de la Empresa" required class="form-control">
@@ -165,7 +163,10 @@
 								<label>Dirección:</label>
 								<input type="text" name="txtDirEmpresa" class="form-control" value="<?php echo $dirEmpresa; ?>" id="txtDirEmpresa" placeholder="Dirreción de la Empresa" required>
 							</div>
-							
+							<div class="form-group">
+								<label>ISV (%):</label>
+								<input type="text" name="txtIgv" class="form-control" value="<?php echo $igv; ?>" id="txtIgv" placeholder="IGV de la Empresa" required>
+							</div>
 							<?php echo isset($alert) ? $alert : ''; ?>
 							<div>
 								<button type="submit" class="btn btn-primary btnChangePass"><i class="fas fa-save"></i> Guardar Datos</button>
@@ -183,7 +184,10 @@
 					</div>
 					<div class="card-body">
 						<div class="p-3">
-							
+							<div class="form-group">
+								<strong>CAI:</strong>
+								<h6><?php echo $dni; ?></h6>
+							</div>
 							<div class="form-group">
 								<strong>Nombre:</strong>
 								<h6><?php echo $nombre_empresa; ?></h6>
@@ -204,7 +208,10 @@
 								<strong>Dirección:</strong>
 								<h6><?php echo $dirEmpresa; ?></h6>
 							</div>
-							
+							<div class="form-group">
+								<strong>ISV (%):</strong>
+								<h6><?php echo $igv; ?></h6>
+							</div>
 
 						</div>
 					</div>
@@ -213,6 +220,7 @@
 
 		<?php } ?>
 	</div>
+
 
 
 </div>

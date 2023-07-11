@@ -46,11 +46,11 @@
                                     </form>
                                 </div>
                             </div>
-                            <h4 class="text-center">Datos Venta</h4>
+                            <h4 class="text-center">Datos del Servicio</h4>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label><i class="fas fa-user"></i> VENDEDOR</label>
+                                        <label><i class="fas fa-user"></i> EMPLEADO</label>
                                         <p style="font-size: 16px; text-transform: uppercase; color: blue;"><?php echo $_SESSION['nombre']; ?></p>
                                     </div>
                                 </div>
