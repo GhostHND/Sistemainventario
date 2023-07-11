@@ -1,79 +1,86 @@
-<?php
-include_once "includes/header.php";
+<?php include_once "includes/header.php";
 include "../conexion.php";
 if (!empty($_POST)) {
     $alert = "";
-    if (empty($_POST['proveedor']) || empty($_POST['contacto']) || empty($_POST['telefono']) || empty($_POST['direccion'])) {
+    if (empty($_POST['nombre']) || empty($_POST['telefono']) || empty($_POST['direccion'])) {
         $alert = '<div class="alert alert-danger" role="alert">
-                        Todo los campos son obligatorios
-                    </div>';
+                                    Todo los campos son obligatorio
+                                </div>';
     } else {
-        $proveedor = $_POST['proveedor'];
-        $contacto = $_POST['contacto'];
+        $dni = $_POST['dni'];
+        $nombre = $_POST['nombre'];
         $telefono = $_POST['telefono'];
-        $Direccion = $_POST['direccion'];
+        $direccion = $_POST['direccion'];
+        $puesto = $_POST['puesto'];
         $usuario_id = $_SESSION['idUser'];
-        $query = mysqli_query($conexion, "SELECT * FROM proveedor where contacto = '$contacto'");
-        $result = mysqli_fetch_array($query);
 
+        $result = 0;
+        if (is_numeric($dni) and $dni != 0) {
+            $query = mysqli_query($conexion, "SELECT * FROM empleado where dni = '$dni'");
+            $result = mysqli_fetch_array($query);
+        }
         if ($result > 0) {
             $alert = '<div class="alert alert-danger" role="alert">
-                        El Ruc ya esta registrado
-                    </div>';
-        }else{
-        
-
-        $query_insert = mysqli_query($conexion, "INSERT INTO proveedor(proveedor,contacto,telefono,direccion,usuario_id) values ('$proveedor', '$contacto', '$telefono', '$Direccion','$usuario_id')");
-        if ($query_insert) {
-            $alert = '<div class="alert alert-primary" role="alert">
-                        Proveedor Registrado
-                    </div>';
+                                    El dni ya existe
+                                </div>';
         } else {
-            $alert = '<div class="alert alert-danger" role="alert">
-                       Error al registrar proveedor
-                    </div>';
-        }
+            $query_insert = mysqli_query($conexion, "INSERT INTO empleado(dni,nombre,telefono,direccion,puesto, usuario_id) values ('$dni', '$nombre', '$telefono', '$direccion','$puesto', '$usuario_id')");
+            if ($query_insert) {
+                $alert = '<div class="alert alert-primary" role="alert">
+                                    Empleado Registrado
+                                </div>';
+            } else {
+                $alert = '<div class="alert alert-danger" role="alert">
+                                    Error al Guardar
+                            </div>';
+            }
         }
     }
+    mysqli_close($conexion);
 }
-mysqli_close($conexion);
 ?>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Panel de Administración - Registrar Empleado</h1>
+        <a href="lista_proveedor.php" class="btn btn-primary">Regresar</a>
+    </div>
+
     <!-- Content Row -->
     <div class="row">
         <div class="col-lg-6 m-auto">
-            <div class="card-header bg-primary text-white">
-                Registro de Proveedor
-            </div>
-            <div class="card">
-                <form action="" autocomplete="off" method="post" class="card-body p-2">
-                    <?php echo isset($alert) ? $alert : ''; ?>
-                    <div class="form-group">
-                        <label for="nombre">NOMBRE</label>
-                        <input type="text" placeholder="Ingrese nombre" name="proveedor" id="nombre" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="contacto">RUC</label>
-                        <input type="text" placeholder="Ingrese nombre del contacto" name="contacto" id="contacto" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">TELÉFONO</label>
-                        <input type="number" placeholder="Ingrese teléfono" name="telefono" id="telefono" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="direccion">DIRECIÓN</label>
-                        <input type="text" placeholder="Ingrese Direccion" name="direccion" id="direcion" class="form-control">
-                    </div>
-                    <input type="submit" value="Guardar Proveedor" class="btn btn-primary">
-                    <a href="lista_proveedor.php" class="btn btn-danger">Regresar</a>
-                </form>
-            </div>
+            <form action="" method="post" autocomplete="off">
+                <?php echo isset($alert) ? $alert : ''; ?>
+                <div class="form-group">
+                    <label for="dni">Dni</label>
+                    <input type="number" placeholder="Ingrese dni" name="dni" id="dni" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" placeholder="Ingrese Nombre" name="nombre" id="nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="number" placeholder="Ingrese Teléfono" name="telefono" id="telefono" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" placeholder="Ingrese Direccion" name="direccion" id="direccion" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="puesto">Puesto</label>
+                    <input type="text" placeholder="Ingrese Puesto" name="puesto" id="puesto" class="form-control">
+                </div>
+
+                <input type="submit" value="Guardar Empleado" class="btn btn-primary">
+            </form>
         </div>
     </div>
 
-
+ 
 </div>
 <!-- /.container-fluid -->
 

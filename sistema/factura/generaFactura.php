@@ -19,7 +19,7 @@
 		$result_cliente = mysqli_fetch_assoc($clientes);
 		$productos = mysqli_query($conexion, "SELECT d.nofactura, d.codproducto, d.cantidad, p.codproducto, p.descripcion, p.precio FROM detallefactura d INNER JOIN producto p ON d.nofactura = $noFactura WHERE d.codproducto = p.codproducto");
 		require_once 'fpdf/fpdf.php';
-		$pdf = new FPDF('P', 'mm', array(80, 200));
+		$pdf = new FPDF('P', 'mm', array(100, 200));
 		$pdf->AddPage();
 		$pdf->SetMargins(1, 0, 0);
 		$pdf->SetTitle("Ventas");
